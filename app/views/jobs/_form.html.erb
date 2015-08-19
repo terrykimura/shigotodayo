@@ -1,0 +1,37 @@
+<%= form_for(@job) do |f| %>
+    募集職種:
+    <%= f.text_field :name %>
+    
+    勤務地住所:
+    <%= f.text_field :address %>
+    
+    最寄駅:
+    路線:
+    <%= f.text_field :stationline %>
+    駅:
+    <%= f.text_field :station %>
+    
+    業務内容:
+    <%= f.text_area :description %>
+    
+    求めるスキル・経験・経歴:
+    <%= f.text_area :requiredskills %>
+    
+    給与条件:
+    <%= f.text_field :salary %>
+    
+    勤務時間:
+    <%= f.text_field :hours %>
+    
+    残業:
+    <%= f.text_field :overtime %>
+    
+    休日・休暇:
+    <%= f.text_field :holidays %>
+    
+    福利厚生:
+    <%= f.text_field :welfare %>
+    
+    <%= f.submit %>
+
+<% end %>
