@@ -9,10 +9,10 @@
     </tr>
     <% @jobs.each do |job| %>
     <tr>
-        <td></td>
+        <td><%= job.companyread %><br><%= job.company %></td>
         <td><%= job.name %></td>
         <td><%= job.station %></td>
-        <td><%= link_to "編集" , edit_job_path(job) %> <%= link_to "削除" , job , method: :delete, data: { confirm: '削除しますよ？！' } %></td>
+        <td><%= link_to "詳細" , job_path(job) %> <%= link_to "編集" , edit_job_path(job) %> <%= link_to "削除" , job , method: :delete, data: { confirm: '削除しますよ？！' } %></td>
     </tr>
     <% end %>
 </table>

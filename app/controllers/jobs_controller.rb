@@ -27,9 +27,13 @@ class JobsController < ApplicationController
     redirect_to root_path, notice: 'お仕事を削除しました'
   end
   
+  def show
+    @job = Job.find(params[:id])
+  end
+  
   private
   def job_params
-    params.require(:job).permit(:name, :address, :stationline, :station, :stationdistance, :description, :requiredskills, :salary, :hours, :overtime, :holidays, :welfare)
+    params.require(:job).permit(:company, :name, :address, :stationline, :station, :stationdistance, :description, :requiredskills, :salary, :hours, :overtime, :holidays, :welfare, :number, :visasupport)
   end
   
   def set_job
