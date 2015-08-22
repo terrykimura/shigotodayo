@@ -4,16 +4,17 @@
     <tr>
         <th>会社名</th>
         <th>募集職種</th>
+        <th>募集人数</th>
         <th>雇用形態</th>
         <th>給与条件</th>
         <th>勤務時間</th>
         <th>最寄り駅</th>
-        <th>編集</th>
     </tr>
     <% @jobs.each do |job| %>
-    <tr>
+    <tr data-link="<%= job_path(job) %>" style="cursor:pointer;">
         <td><%= job.companyread %><br><%= job.company %></td>
         <td><%= job.name %></td>
+        <td><%= job.number %></td>
         <td>
             <% if job.employmenttype == 0 %>
             <% elsif job.employmenttype == 1 %>
@@ -33,7 +34,6 @@
         <td><%= job.salary %></td>
         <td><%= job.hours %></td>
         <td><%= job.stationline %><br><%= job.station %></td>
-        <td><%= link_to "詳細" , job_path(job) %> <%= link_to "編集" , edit_job_path(job) %> <%= link_to "削除" , job , method: :delete, data: { confirm: '削除しますよ？！' } %></td>
     </tr>
     <% end %>
 </table>

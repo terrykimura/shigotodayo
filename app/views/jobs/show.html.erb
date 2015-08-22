@@ -82,3 +82,5 @@
 </table>
 
 <%= link_to "編集" , edit_job_path(@job) , :class => "btn btn-primary btn-block btn-lg" %>
+
+<%= link_to "削除" , @job , method: :delete , :class => "btn btn-danger btn-block btn-lg" , data: { confirm: '削除しますよ？！' } %>

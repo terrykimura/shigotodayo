@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// To make table rows in index clickable, from http://stevechristie.tumblr.com/post/35710164050/how-to-make-an-entire-table-row-clickable-in-rails
+jQuery(function($) {
+$("tr[data-link]").click(function() {
+window.location = this.dataset.link
+});
+})
