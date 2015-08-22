@@ -24,15 +24,16 @@
     <tr>
         <td>雇用形態:</td>
         <td>
-            <% if @job.type == 0 %>
+            <% if @job.employmenttype == 0 %>
+            <% elsif @job.employmenttype == 1 %>
                 正社員
-            <% elsif @job.type == 1 %>
+            <% elsif @job.employmenttype == 2 %>
                 契約社員
-            <% elsif @job.type == 2 %>
+            <% elsif @job.employmenttype == 3 %>
                 派遣社員
-            <% elsif @job.type == 3 %>
+            <% elsif @job.employmenttype == 4 %>
                 アルバイト
-            <% elsif @job.type == 4 %>
+            <% elsif @job.employmenttype == 5 %>
                 委託
             <% else %>
                 (未登録)

@@ -4,6 +4,9 @@
     <tr>
         <th>会社名</th>
         <th>募集職種</th>
+        <th>雇用形態</th>
+        <th>給与条件</th>
+        <th>勤務時間</th>
         <th>最寄り駅</th>
         <th>編集</th>
     </tr>
@@ -11,7 +14,25 @@
     <tr>
         <td><%= job.companyread %><br><%= job.company %></td>
         <td><%= job.name %></td>
-        <td><%= job.station %></td>
+        <td>
+            <% if @job.employmenttype == 0 %>
+            <% elsif @job.employmenttype == 1 %>
+                正社員
+            <% elsif @job.employmenttype == 2 %>
+                契約社員
+            <% elsif @job.employmenttype == 3 %>
+                派遣社員
+            <% elsif @job.employmenttype == 4 %>
+                アルバイト
+            <% elsif @job.employmenttype == 5 %>
+                委託
+            <% else %>
+                (未登録)
+            <% end %>
+        </td>
+        <td><%= job.salary %></td>
+        <td><%= job.hours %></td>
+        <td><%= job.stationline %><br><%= job.station %></td>
         <td><%= link_to "詳細" , job_path(job) %> <%= link_to "編集" , edit_job_path(job) %> <%= link_to "削除" , job , method: :delete, data: { confirm: '削除しますよ？！' } %></td>
     </tr>
     <% end %>

@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td>雇用形態</td>
-            <td><%= select_tag(:type, options_for_select([['正社員', 0], ['契約社員', 1], ['派遣社員', 2], ['アルバイト', 3], ['委託', 4]]), :class => "form-control") %></td>
+            <td><%= f.select(:employmenttype, options_for_select([['', 0], ['正社員', 1], ['契約社員', 2], ['派遣社員', 3], ['アルバイト', 4], ['委託', 5]]), {}, { :class => "form-control" }) %></td>
         </tr>
         <tr>
             <td>給与条件</td>
