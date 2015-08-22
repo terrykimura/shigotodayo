@@ -16,7 +16,7 @@ class JobsController < ApplicationController
   
   def update
     if @job.update(job_params)
-      redirect_to root_path , notice: 'お仕事を保存しました'
+      redirect_to job_path(@job) , notice: 'お仕事を保存しました'
     else
       render 'edit'
     end
