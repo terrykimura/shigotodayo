@@ -46,7 +46,7 @@
     </tr>
     <tr>
         <td>勤務時間</td>
-        <td><%= @job.hours %> （勤務形態: <%= @job.worktype %>）</td>
+        <td><%= @job.hours %> （勤務形態: <% if @job.worktype == 0 %>フルタイム<% elsif @job.worktype == 1 %>パートタイム<% else %>未登録<% end %>）</td>
     </tr>
     <tr>
         <td>残業</td>
