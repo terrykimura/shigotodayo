@@ -79,3 +79,5 @@
         <td>路線: <%= @job.stationline %><br>駅: <%= @job.station %></td>
     </tr>
 </table>
+
+<%= link_to "編集" , edit_job_path(@job) , :class => "btn btn-primary btn-block btn-lg" %>
